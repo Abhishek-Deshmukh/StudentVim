@@ -7,24 +7,16 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/goyo.vim'
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'bling/vim-airline'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
-Plug 'vifm/vifm.vim'
-Plug 'sophacles/vim-processing'
-Plug 'vim-scripts/django.vim'
-Plug 'kamykn/spelunker.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'valloric/youcompleteme'
-Plug 'saada/reactjs-snippets'
-Plug 'vimwiki/vimwiki'
 Plug 'suan/vim-instant-markdown'
 call plug#end()
 
-set bg=dark
 set go=a
 set mouse=a
 set nohlsearch
@@ -37,14 +29,15 @@ filetype plugin on
 syntax on
 set encoding=utf-8
 set number relativenumber
-colorscheme solarized8_flat
+set background=light
+colorscheme solarized8_high
 " Enable autocompletion:
 set wildmode=longest,list,full
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" setting nerdtree to default
-"	autocmd vimenter * NERDTree
+" setting nerdtree to default (comment it to turn it off)
+autocmd vimenter * NERDTree
 
 " Goyo plugin makes text more readable when writing prose:
 map <leader>f :Goyo<CR>
@@ -60,23 +53,15 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 			\ 'syntax': 'markdown', 'ext': '.md'}]
 
 " Vim instant markdown preview
-filetype plugin on
+map<leader>md :InstantMarkdownPreview<CR>
 let g:instant_markdown_autostart = 1   "enabling autostart
 let g:instant_markdown_mathjax = 1	"enabling mathematical syntax
-let g:instant_markdown_browser = "surf"
+" let g:instant_markdown_browser = "firefox"
 let g:instant_markdown_slow = 1
-map<leader>md :InstantMarkdownPreview<CR>
 
 " Nerd tree
 map <leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" vimling:
-nm <leader>d :call ToggleDeadKeys()<CR>
-imap <leader>d <esc>:call ToggleDeadKeys()<CR>a
-nm <leader>i :call ToggleIPA()<CR>
-imap <leader>i <esc>:call ToggleIPA()<CR>a
-nm <leader>q :call ToggleProse()<CR>
 
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
@@ -94,8 +79,8 @@ map <leader>r :vsp<space>$REFER<CR>
 " Replace all is aliased to S.
 nnoremap S :%s//g<Left><Left>
 
-" Compile document, be it groff/LaTeX/markdown/etc.
-map <leader>c :w! \| !compiler <c-r>%<CR>
+" Compile document, be it groff/LaTeX/markdown/etc. to use compiler use
+" map <leader>c :w! \| !compiler <c-r>%<CR>
 
 " Open corresponding .pdf/.html or preview
 map <leader>p :!opout <c-r>%<CR><CR>
