@@ -31,8 +31,10 @@ set encoding=utf-8
 set number relativenumber
 set background=light
 colorscheme solarized8_high
+
 " Enable autocompletion:
 set wildmode=longest,list,full
+
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -47,10 +49,6 @@ map <leader>o :setlocal spell! spelllang=en_us<CR>
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 set splitbelow splitright
-
-" vimwiki with markdown support
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-			\ 'syntax': 'markdown', 'ext': '.md'}]
 
 " Vim instant markdown preview
 map<leader>md :InstantMarkdownPreview<CR>
