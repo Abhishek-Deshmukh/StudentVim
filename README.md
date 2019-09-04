@@ -1,4 +1,5 @@
 # About StudentVim
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/Abhishek-Deshmukh)
 
 Student vim is a set of plugins an setting useful for students to take notes Using markdown. It has a few personal setting which you can change if you want to change
 
