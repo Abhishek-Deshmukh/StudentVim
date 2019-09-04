@@ -77,7 +77,7 @@ map <leader>r :vsp<space>$REFER<CR>
 " Replace all is aliased to S.
 nnoremap S :%s//g<Left><Left>
 
-" Compile document, be it groff/LaTeX/markdown/etc. to use compiler use
+" uncomment this after installing https://github.com/Abhishek-Deshmukh/Compiler to use compiler
 " map <leader>c :w! \| !compiler <c-r>%<CR>
 
 " Open corresponding .pdf/.html or preview
@@ -87,8 +87,6 @@ map <leader>p :!opout <c-r>%<CR><CR>
 autocmd VimLeave *.tex !texclear %
 
 " Ensure files are read as what I want:
-let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-let g:vimwiki_list = [{'path': '~/vimwiki', 'slet g:ycm_filetype_blacklist = {}yntax': 'markdown', 'ext': '.md'}]
 autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 autocmd BufRead,BufNewFile *.tex set filetype=tex

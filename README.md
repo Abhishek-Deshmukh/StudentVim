@@ -67,6 +67,7 @@ This is for seeing the markdown preview on a you default browser(in github flavo
 - Syntax is matched with the file type automatically
 - Automatically deletes any trailing while spaces
 - Latex, HTML, Markdown, xml shortcuts
-- `,c` for autocompile form most file documents.
+- `,c` for autocompile form most file documents.([To use this](https://github.com/Abhishek-Deshmukh/Compiler))
 - `,p` to open the corresonding pdf file(if produced)
+- `S` in normal mode set as replace all aliase
 
