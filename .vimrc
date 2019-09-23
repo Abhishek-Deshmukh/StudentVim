@@ -38,6 +38,9 @@ set wildmode=longest,list,full
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" Setting :W to write also
+command! W write
+
 " setting nerdtree to default (comment it to turn it off)
 autocmd vimenter * NERDTree
 
